@@ -1,0 +1,14 @@
+2026-01-02 03:32:56,706 INFO Starting validation
+2026-01-02 03:32:56,706 INFO dac_pdf=daisy_test_data\2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365.pdf
+2026-01-02 03:32:56,707 INFO evidence_dir=daisy_test_data
+2026-01-02 03:32:56,707 INFO out_dir=out
+2026-01-02 03:32:56,707 INFO flags: mvp=True lenient=True schema_validate=True
+2026-01-02 03:32:56,707 INFO rules loaded from: config\rules.yaml
+2026-01-02 03:32:56,770 INFO PDF read: pages=60, chars=45162, referenced_xlsx=6
+2026-01-02 03:32:58,446 INFO Wrote outputs to: out
+2026-01-02 03:32:58,446 INFO Done. overall_status=MET
+2026-01-02 03:45:18,629 ERROR DAC PDF not found: ...
+2026-01-02 04:13:59,330 INFO OCR cache write: Chapter1.d3b9b110.txt
+2026-01-02 04:14:02,277 INFO OCR cache write: Chapter2-3.f2b8210c.txt
+2026-01-02 04:15:19,155 INFO OCR cache hit: Chapter1.d3b9b110.txt
+2026-01-02 04:15:19,336 INFO OCR cache hit: Chapter2-3.f2b8210c.txt

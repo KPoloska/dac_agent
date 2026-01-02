@@ -1,0 +1,98 @@
+NEXIS
+
+1. IT Asset Description
+
+1 IT Asset Description
+
+The current chapter is aimed to provide general information regarding the IT Asset, including
+environment landscape and used infrastructure components.
+
+1.1 General Information
+
+Please provide basic IT Asset Information
+
+CMS Product ID 1513344
+IT Asset ID: AID551
+IT Asset Name: MICROSOFT OFFICE 365
+
+For IT Applications, please provide the screenshot/report from APMS with the time stamp on it as
+an evidence in case IT Asset information changes between concept review cycles. The information
+extract (screenshot or report) should contain the following information:
+
+Role: AID551 - Application Owner [Krier, Benoit
+IT Applicaton Owner (8a7e5969577640ff01591dadcc92670d) | Halligan, Dean
+(8a7e5969577640ff01591da4497a4f50)]
+
+Role: AID551 - Business Owner [Krier, Benoit
+Business Owner (8a7e5969577640ff01591dadcc92670d) | Leveling, Francois
+(8a7e5969577640ff01591da2920d4aee)]
+
+Role: AID551 - Contributor (Krier, Benoit
+
+Contributor (8a7e5969577640ff01591dadcc92670d)]
+
+Nov 11, 2025
+
+15/60
+
+Technical Reviewer
+
+TISO
+
+Max. Confidentiality
+
+Max. Integrity
+
+Max. Availability
+
+Max. Authenticity
+
+Max. Criticality
+
+IQ onboarded
+
+SIEM onboarded
+
+Product Version
+
+Product Line
+
+Application Support Group
+
+Application Hosting
+
+Legal Entity
+
+Nov 11, 2025
+
+NEXIS
+
+Leorda, Dragos (Oafed9ea84471373818487eed7a64360)
+
+Role: AID551 - Technical Information Security Officer [Bossow,
+Holger (Oafed9ea7db51d06817dc59582667aac) | Jouanne,
+Alexis (8a7e596973a0f1b60173a1d9c87c3091)]
+
+Critica
+
+Critica
+
+Critica
+
+Critica
+
+Critica
+
+Technical Onboarded
+
+Onboarded
+
+SaaS - Deployment Date: 2022-08-01 - Decommision Date:
+
+Product-14 Product-Corporate IT
+
+IT CRP MS Ex
+
+Service Provider only
+
+16/60

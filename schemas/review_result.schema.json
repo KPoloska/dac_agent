@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/daisy/review_result.schema.json",
+  "title": "Daisy review result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["dac_file", "generated_at", "overall_status", "sections"],
+  "properties": {
+    "result_version": { "type": "string" },
+    "dac_file": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string" },
+    "overall_status": {
+      "type": "string",
+      "enum": ["MET", "PARTIALLY_MET", "NOT_MET", "UNKNOWN"]
+    },
+    "sections": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/section" }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "stats": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["section_id", "name", "status", "checks"],
+      "properties": {
+        "section_id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["MET", "PARTIALLY_MET", "NOT_MET", "UNKNOWN"]
+        },
+        "checks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/check" }
+        }
+      }
+    },
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "name", "status", "severity", "message", "evidence"],
+      "properties": {
+        "check_id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["MET", "NOT_MET", "SKIPPED", "UNKNOWN"]
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["critical", "major", "minor", "info"]
+        },
+        "message": { "type": "string" },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

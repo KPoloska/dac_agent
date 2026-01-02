@@ -1,0 +1,57 @@
+# Daisy rules (MVP / lightweight production)
+# Keep this file config-driven so thresholds + required evidence can change without code edits.
+
+pdf_evidence:
+  required_files:
+    - "Chapter1.pdf"
+    - "Chapter2-3.pdf"
+    - "Provisioning & Assignment of Access.pdf"
+    - "Review and Approval of Access.pdf"
+    - "Recertification.pdf"
+
+  # Minimum extractable text chars to treat a PDF as "text-based"
+  min_text_chars: 200
+
+  # If extractable text is below min_text_chars AND image_count >= this threshold -> OCR required
+  ocr_image_threshold: 1
+
+  # NEW: content checks per evidence PDF (uses extractable text; if scanned + --ocr enabled, uses OCR text)
+  # Types supported: regex, contains
+  content_rules:
+    "Chapter1.pdf":
+      - id: "CH1-01"
+        name: "Chapter 1 contains the word 'Chapter' (sanity check)"
+        type: "regex"
+        pattern: "(?i)chapter"
+        severity: "major"
+
+    "Chapter2-3.pdf":
+      - id: "CH23-01"
+        name: "Chapter 2-3 contains the word 'Chapter' (sanity check)"
+        type: "regex"
+        pattern: "(?i)chapter"
+        severity: "major"
+
+excel_thresholds:
+  entitlements_required:
+    ratio_tol: 0.10
+    abs_tol: 50
+    # In MVP, this check is "major"; otherwise "critical"
+    mvp_severity: "major"
+    non_mvp_severity: "critical"
+
+  entitlements_descriptions:
+    ratio_tol: 0.10
+    abs_tol: 50
+    severity: "major"
+
+  itroles_required:
+    ratio_tol: 0.01
+    abs_tol: 5
+    mvp_severity: "major"
+    non_mvp_severity: "critical"
+
+  itroles_descriptions:
+    ratio_tol: 0.01
+    abs_tol: 5
+    severity: "major"
