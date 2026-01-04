@@ -1,0 +1,466 @@
+{
+  "dac_file": "out\\dac_partially_scanned.pdf",
+  "generated_at": "2026-01-02T03:49:50.457419+00:00",
+  "overall_status": "PARTIALLY_MET",
+  "sections": [
+    {
+      "section_id": "1.1",
+      "name": "General Information",
+      "status": "NOT_MET",
+      "checks": [
+        {
+          "check_id": "S1.1-01",
+          "name": "CMS Product ID present",
+          "status": "NOT_MET",
+          "severity": "major",
+          "message": "Value missing or empty.",
+          "evidence": {}
+        },
+        {
+          "check_id": "S1.1-02",
+          "name": "IT Asset ID present",
+          "status": "NOT_MET",
+          "severity": "major",
+          "message": "Value missing or empty.",
+          "evidence": {}
+        },
+        {
+          "check_id": "S1.1-03",
+          "name": "IT Asset Name present",
+          "status": "NOT_MET",
+          "severity": "major",
+          "message": "Value missing or empty.",
+          "evidence": {}
+        }
+      ]
+    },
+    {
+      "section_id": "2.0",
+      "name": "Process Evidence (PDFs)",
+      "status": "MET",
+      "checks": [
+        {
+          "check_id": "S2.0-01",
+          "name": "Evidence PDF present: Chapter1.pdf",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\Chapter1.pdf"
+          }
+        },
+        {
+          "check_id": "S2.0-02",
+          "name": "Evidence PDF present: Chapter2-3.pdf",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\Chapter2-3.pdf"
+          }
+        },
+        {
+          "check_id": "S2.0-03",
+          "name": "Evidence PDF present: Provisioning & Assignment of Access.pdf",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\Provisioning & Assignment of Access.pdf"
+          }
+        },
+        {
+          "check_id": "S2.0-04",
+          "name": "Evidence PDF present: Review and Approval of Access.pdf",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\Review and Approval of Access.pdf"
+          }
+        },
+        {
+          "check_id": "S2.0-05",
+          "name": "Evidence PDF present: Recertification.pdf",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\Recertification.pdf"
+          }
+        },
+        {
+          "check_id": "S2.0-01-TXT",
+          "name": "Evidence PDF has extractable text: Chapter1.pdf",
+          "status": "MET",
+          "severity": "major",
+          "message": "MVP warning: OCR required: PDF appears scanned/image-based (no/low extractable text).",
+          "evidence": {
+            "file": "daisy_test_data\\Chapter1.pdf",
+            "page_count": 10,
+            "text_chars": 0,
+            "image_count": 20,
+            "ocr_required": true
+          }
+        },
+        {
+          "check_id": "S2.0-02-TXT",
+          "name": "Evidence PDF has extractable text: Chapter2-3.pdf",
+          "status": "MET",
+          "severity": "major",
+          "message": "MVP warning: OCR required: PDF appears scanned/image-based (no/low extractable text).",
+          "evidence": {
+            "file": "daisy_test_data\\Chapter2-3.pdf",
+            "page_count": 11,
+            "text_chars": 0,
+            "image_count": 22,
+            "ocr_required": true
+          }
+        },
+        {
+          "check_id": "S2.0-03-TXT",
+          "name": "Evidence PDF has extractable text: Provisioning & Assignment of Access.pdf",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\Provisioning & Assignment of Access.pdf",
+            "page_count": 3,
+            "text_chars": 4460,
+            "image_count": 3,
+            "ocr_required": false
+          }
+        },
+        {
+          "check_id": "S2.0-04-TXT",
+          "name": "Evidence PDF has extractable text: Review and Approval of Access.pdf",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\Review and Approval of Access.pdf",
+            "page_count": 3,
+            "text_chars": 2633,
+            "image_count": 3,
+            "ocr_required": false
+          }
+        },
+        {
+          "check_id": "S2.0-05-TXT",
+          "name": "Evidence PDF has extractable text: Recertification.pdf",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\Recertification.pdf",
+            "page_count": 2,
+            "text_chars": 2668,
+            "image_count": 2,
+            "ocr_required": false
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "4.1",
+      "name": "Entitlements",
+      "status": "PARTIALLY_MET",
+      "checks": [
+        {
+          "check_id": "S4.1-01",
+          "name": "SoD relevancy recorded (yes/no)",
+          "status": "MET",
+          "severity": "critical",
+          "message": "",
+          "evidence": {
+            "value": "no"
+          }
+        },
+        {
+          "check_id": "S4.1-02",
+          "name": "Functional Area relevancy recorded (yes/no)",
+          "status": "SKIPPED",
+          "severity": "major",
+          "message": "Missing/unparseable yes/no in DAC PDF (lenient mode).",
+          "evidence": {}
+        },
+        {
+          "check_id": "S4.1-03",
+          "name": "Entitlement composition upload decision recorded (yes/no)",
+          "status": "SKIPPED",
+          "severity": "major",
+          "message": "Missing/unparseable yes/no in DAC PDF (lenient mode).",
+          "evidence": {}
+        },
+        {
+          "check_id": "S4.1-F01",
+          "name": "Export present: Entitlement Services.xlsx",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_Entitlement Services.xlsx"
+          }
+        },
+        {
+          "check_id": "S4.1-F02",
+          "name": "Export present: All Entitlements.xlsx",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All Entitlements.xlsx"
+          }
+        },
+        {
+          "check_id": "S4.1-EX-01",
+          "name": "Entitlement Services: required master data filled",
+          "status": "MET",
+          "severity": "major",
+          "message": "MVP warning: 33 of 572 rows failed (tolerance=57).",
+          "evidence": {
+            "total_rows": 572,
+            "failing_rows": 33,
+            "samples": [
+              {
+                "Display name": "BC_AGMQAPrepTool_EBMembers @ oa.pnrad.net",
+                "Description": NaN,
+                "SoD Area": "XX - Not SoD-relevant",
+                "Tier Level": 3.0
+              },
+              {
+                "Display name": "MDO-RBAC-Full-Management @ oa.pnrad.net",
+                "Description": NaN,
+                "SoD Area": "XX - Not SoD-relevant",
+                "Tier Level": 1.0
+              },
+              {
+                "Display name": "O365-LG-CopilotStudio @ oa.pnrad.net",
+                "Description": "Owner: xa359_Benoit Krier, ha995_Martin Puaud",
+                "SoD Area": "XX - Not SoD-relevant",
+                "Tier Level": NaN
+              },
+              {
+                "Display name": "O365-LG-E5-SharedMBX-ConfCall @ oa.pnrad.net",
+                "Description": "Owner: xa359_Benoit Krier, ha995_Martin Puaud",
+                "SoD Area": "XX - Not SoD-relevant",
+                "Tier Level": NaN
+              },
+              {
+                "Display name": "O365-LG-PowerAppsUser-Atlas @ oa.pnrad.net",
+                "Description": "Owner: xa359_Benoit Krier, ud637_Johannes Hugo",
+                "SoD Area": "XX - Not SoD-relevant",
+                "Tier Level": NaN
+              }
+            ]
+          }
+        },
+        {
+          "check_id": "S4.1-EX-02",
+          "name": "Entitlement Services: descriptions are meaningful",
+          "status": "MET",
+          "severity": "major",
+          "message": "MVP warning: 21 of 572 rows failed (tolerance=57).",
+          "evidence": {
+            "total_rows": 572,
+            "failing_rows": 21,
+            "samples": [
+              {
+                "Display name": "BC_AGMQAPrepTool_EBMembers @ oa.pnrad.net",
+                "Description": NaN
+              },
+              {
+                "Display name": "DLP-Excel-Exception-CBAus-M365",
+                "Description": "DLP-Excel-Exception-CBAus-M365"
+              },
+              {
+                "Display name": "DLP-Excel-Exception-CBDubai-M365",
+                "Description": "DLP-Excel-Exception-CBDubai-M365"
+              },
+              {
+                "Display name": "DLP-Excel-Exception-CBF-M365",
+                "Description": "DLP-Excel-Exception-CBF-M365"
+              },
+              {
+                "Display name": "DLP-Excel-Exception-CBHK-M365",
+                "Description": "DLP-Excel-Exception-CBHK-M365"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "4.2",
+      "name": "IT Roles",
+      "status": "PARTIALLY_MET",
+      "checks": [
+        {
+          "check_id": "S4.2-01",
+          "name": "CIF (critical & important function) recorded (yes/no)",
+          "status": "SKIPPED",
+          "severity": "major",
+          "message": "Missing/unparseable yes/no in DAC PDF (lenient mode).",
+          "evidence": {}
+        },
+        {
+          "check_id": "S4.2-F01",
+          "name": "Export present: IT Role Services.xlsx",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_IT Role Services.xlsx"
+          }
+        },
+        {
+          "check_id": "S4.2-F02",
+          "name": "Export present: All my Roles.xlsx",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my Roles.xlsx"
+          }
+        },
+        {
+          "check_id": "S4.2-F03",
+          "name": "Export present: All my Application Roles.xlsx",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my Application Roles.xlsx"
+          }
+        },
+        {
+          "check_id": "S4.2-F04",
+          "name": "Export present: All my IT Roles without Application Role.xlsx",
+          "status": "MET",
+          "severity": "major",
+          "message": "",
+          "evidence": {
+            "file": "daisy_test_data\\2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my IT Roles without Application Role.xlsx"
+          }
+        },
+        {
+          "check_id": "S4.2-EX-01",
+          "name": "IT Role Services: required master data filled (base + owner fallback)",
+          "status": "MET",
+          "severity": "major",
+          "message": "MVP warning: 1 of 816 rows failed (tolerance=8).",
+          "evidence": {
+            "total_rows": 816,
+            "failing_rows": 1,
+            "owner_cols_used": [
+              "IT Role Owner",
+              "cust_owner",
+              "Application Owner"
+            ],
+            "samples": [
+              {
+                "Display name": "SharePoint - Administrator-IT",
+                "Description": NaN,
+                "Tier Level": 1,
+                "IT Role Owner": NaN,
+                "cust_owner": NaN,
+                "Application Owner": "SharePoint Admin - Role Owner | User group"
+              }
+            ]
+          }
+        },
+        {
+          "check_id": "S4.2-EX-02",
+          "name": "IT Role Services: descriptions are meaningful",
+          "status": "MET",
+          "severity": "major",
+          "message": "MVP warning: 1 of 816 rows failed (tolerance=8).",
+          "evidence": {
+            "total_rows": 816,
+            "failing_rows": 1,
+            "samples": [
+              {
+                "Display name": "SharePoint - Administrator-IT",
+                "Description": NaN
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "4.3",
+      "name": "Special Accounts",
+      "status": "UNKNOWN",
+      "checks": [
+        {
+          "check_id": "S4.3-01",
+          "name": "Export present: Special Accounts Services.xlsx",
+          "status": "SKIPPED",
+          "severity": "major",
+          "message": "MVP: Special Accounts export not provided; skipping (still recommended to include for full validation).",
+          "evidence": {
+            "expected": "Special Accounts Services.xlsx",
+            "referenced_by_pdf": true
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "4.4",
+      "name": "Segregation of Duties",
+      "status": "UNKNOWN",
+      "checks": [
+        {
+          "check_id": "S4.4-01",
+          "name": "Functional Area Matrix.xlsx present when SoD relevant",
+          "status": "SKIPPED",
+          "severity": "major",
+          "message": "Skipped because SoD relevancy is not 'yes' (or could not be extracted).",
+          "evidence": {}
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    "[1.1] CMS Product ID present: Value missing or empty.",
+    "[1.1] IT Asset ID present: Value missing or empty.",
+    "[1.1] IT Asset Name present: Value missing or empty."
+  ],
+  "stats": {
+    "referenced_xlsx": [
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All Entitlements.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_IT Role Services.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my Roles.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my IT Roles without Application Role.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my Application Roles.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_Special Accounts Services.xlsx"
+    ],
+    "evidence_dir_files": [
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365.pdf",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All Entitlements.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my Application Roles.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my IT Roles without Application Role.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my Roles.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_Entitlement Services.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_Functional Area Matrix.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_IT Role Services.xlsx",
+      "Chapter1.pdf",
+      "Chapter2-3.pdf",
+      "Chapter2-new.pdf",
+      "Chapter2.pdf",
+      "Chapter3.pdf",
+      "Provisioning & Assignment of Access.pdf",
+      "Recertification.pdf",
+      "Review and Approval of Access.pdf"
+    ],
+    "dac_ocr": {
+      "ocr_enabled": false,
+      "ocr_attempted": false,
+      "ocr_succeeded": false,
+      "base_text_chars": 43251,
+      "text_chars_after_ocr": 43251,
+      "ocr_pages_requested": null
+    }
+  }
+}

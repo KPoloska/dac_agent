@@ -1,0 +1,102 @@
+===PAGE 14===
+CONEXIS
+
+1. IT Asset Description
+
+1 IT Asset Description
+
+The current chapter is aimed to provide general information regarding the IT Asset, including
+environment landscape and used infrastructure components.
+
+1.1 General Information
+
+Please provide basic IT Asset Information
+
+CMS Product ID 1513344
+IT Asset ID: AID551
+IT Asset Name: MICROSOFT OFFICE 365
+
+For IT Applications, please provide the screenshot/report from APMS with the time stamp on it as
+an evidence in case IT Asset information changes between concept review cycles. The information
+extract (screenshot or report) should contain the following information:
+
+Role: AID551 - Application Owner [Krier, Benoit
+
+IT Applicaton Owner (8a7e5969577640ff01591dadcc92670d) | Halligan, Dean
+(8a7e5969577640ff01591da4497a4f50)]
+
+Role: AID551 - Business Owner [Krier, Benoit
+Business Owner (8a7e5969577640ff01591dadcc92670d) | Leveling, Francois
+(8a7e5969577640ff01591da2920d4aee)]
+
+. Role: AID551 - Contributor [Krier, Benoit
+Contributor
+
+(8a7e5969577640ff01591dadcc92670d)|
+
+Nov 11, 2025
+
+15/60
+===PAGE 38===
+CONEXIS
+
+Comments:
+
+SoD relevant?
+
+Functional Area
+
+es
+relevant? y
+
+Do you want to
+upload the
+entitlement
+composition?
+
+* Entitlements refer to the access rights, including group memberships or access permissions, that have been
+granted to a user who has an account on the related source.
+
+Nov 11, 2025 39/60
+===PAGE 43===
+CONEXIS
+
+Ils Application a
+critical and
+function
+Application?
+
+lf "CIF" is set true, all roles
+approval by, will be changed to
+"Manager in Line/ IT Role Owner
+
+Nov 11, 2025 44/60
+===PAGE 53===
+NEXIS
+
+feo) Mees Sard, Phe Acie ae Pee tol A
+
+a Sul coer gre pcm
+
+asi sec porehiader Coreradien calmed ae g enka of ge Qe ee ot eu egress ee app oe eee oe eee pone eg proces Pe ede ete & he eee mee tata or he FE ey
+aoe a Cece irae oP a Cee GD) Oe ee) iy eg De er ey eed oe A ed ne ae Og
+
+Crees 5 Neot-eanicied GORA (re Fane on the peumiong procens
+
+:
+
+ee ee ea ee eee
+ace Pica © <see etetymoee 2 oghe cae coctewtor «owt pecficey a cuced
+ieD iad a ee oe oF
+Au Loa Pg ——__—-——_ aha a Lo oa ey dct Pa ee ie Tee Pid Corer pe
+
+Fe Me Ae ace IS Me Gs mee Pa, Coe canal,
+
+Please fill in the table below mentioning restrictions and used controls in case conflicts / toxic
+combinations of access rights.
+
+Note: this subchapter is only relevant if IT Asset is not onboarded to IIQ. If the application is
+onboarded to IIQ, you will find it in Chapter 1 (IT Asset Description) under IIQ onboarded. If IT Asset
+is onboarded to IIQ.
+
+Nov 11, 2025 54/60

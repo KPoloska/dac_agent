@@ -6,14 +6,16 @@
   "flags": {
     "mvp": true,
     "lenient": true,
-    "schema_validate": true
+    "schema_validate": true,
+    "ocr": true,
+    "debug_extract": false
   },
   "timings_sec": {
-    "total": 1.3331151999955182
+    "total": 3.786810500001593
   },
   "counts": {
     "sections": 6,
-    "checks": 32,
+    "checks": 30,
     "referenced_xlsx": 6,
     "ocr_required_pdfs": 2
   },
@@ -21,10 +23,6 @@
     "Chapter1.pdf",
     "Chapter2-3.pdf"
   ],
-  "ocr": true,
-  "ocr_lang": "eng",
-  "ocr_max_pages": 2,
-  "ocr_dpi": 200,
   "inputs": {
     "sha256": {
       "dac_pdf": "e6f3acf9741d8486fb10be2ac387f70eb08fbbe35bf4832479473eb8812e8049",
@@ -58,6 +56,7 @@
     "review_result_json": "out\\review_result.json",
     "review_result_md": "out\\review_result.md",
     "run_summary_json": "out\\run_summary.json",
-    "run_log": "out\\run.log"
+    "run_log": "out\\run.log",
+    "extract_debug_json": null
   }
 }

@@ -1,0 +1,67 @@
+[
+  {
+    "event": "extract_fallback_value",
+    "field": "cms_id",
+    "value": null,
+    "method": "text_regex"
+  },
+  {
+    "event": "extract_fallback_value",
+    "field": "it_asset_id",
+    "value": null,
+    "method": "text_regex"
+  },
+  {
+    "event": "extract_fallback_value",
+    "field": "it_asset_name",
+    "value": null,
+    "method": "text_regex"
+  },
+  {
+    "event": "extract_1.1_values",
+    "cms_id": null,
+    "it_asset_id": null,
+    "it_asset_name": null
+  },
+  {
+    "event": "sec4.1_candidate_pages",
+    "pages": [
+      0,
+      2,
+      7,
+      54,
+      55
+    ]
+  },
+  {
+    "event": "sec4.1_extract",
+    "field": "sod",
+    "value": "no",
+    "method": "text_near"
+  },
+  {
+    "event": "sec4.1_extract",
+    "field": "fa",
+    "value": null,
+    "method": "text_near"
+  },
+  {
+    "event": "sec4.1_extract",
+    "field": "upload",
+    "value": null,
+    "method": "text_near"
+  },
+  {
+    "event": "sec4.2_candidate_pages",
+    "pages": [
+      35,
+      42
+    ]
+  },
+  {
+    "event": "sec4.2_extract",
+    "field": "cif",
+    "value": null,
+    "method": "text_near"
+  }
+]

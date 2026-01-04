@@ -1,0 +1,62 @@
+{
+  "result_version": "1.0",
+  "dac_file": "out\\dac_partially_scanned.pdf",
+  "evidence_dir": "daisy_test_data",
+  "rules_path": "config\\rules.yaml",
+  "flags": {
+    "mvp": true,
+    "lenient": true,
+    "schema_validate": true,
+    "ocr": true,
+    "debug_extract": true
+  },
+  "timings_sec": {
+    "total": 1.1552676999999676
+  },
+  "counts": {
+    "sections": 6,
+    "checks": 29,
+    "referenced_xlsx": 6,
+    "ocr_required_pdfs": 2
+  },
+  "ocr_required_files": [
+    "Chapter1.pdf",
+    "Chapter2-3.pdf"
+  ],
+  "inputs": {
+    "sha256": {
+      "dac_pdf": "22bc1044e6eed81b251b6b4bd1a202f2a469c619ce66ae8474d63ce23a7bf16b",
+      "rules_yaml": "6101f1fb6ecd6196c6eb3a0feef576068f8bb77b6ca6fe67ecc41b739e762553",
+      "evidence_file_list": "4b5f2beed8757fbf3212c8559834e47e6a1970bc477247d771cb9dfde3aa5cef"
+    },
+    "evidence_file_list": [
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365.pdf",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All Entitlements.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my Application Roles.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my IT Roles without Application Role.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_All my Roles.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_Entitlement Services.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_Functional Area Matrix.xlsx",
+      "2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365_IT Role Services.xlsx",
+      "Chapter1.pdf",
+      "Chapter2-3.pdf",
+      "Chapter2-new.pdf",
+      "Chapter2.pdf",
+      "Chapter3.pdf",
+      "Provisioning & Assignment of Access.pdf",
+      "Recertification.pdf",
+      "Review and Approval of Access.pdf"
+    ]
+  },
+  "schema": {
+    "validated": false,
+    "error": "schema skipped: schema file not found"
+  },
+  "output_files": {
+    "review_result_json": "out_ocr_partial\\review_result.json",
+    "review_result_md": "out_ocr_partial\\review_result.md",
+    "run_summary_json": "out_ocr_partial\\run_summary.json",
+    "run_log": "out_ocr_partial\\run.log",
+    "extract_debug_json": "out_ocr_partial\\extract_debug.json"
+  }
+}

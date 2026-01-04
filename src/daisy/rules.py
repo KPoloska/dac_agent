@@ -3,8 +3,18 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Any
-
+import logging
 import yaml
+
+
+DEFAULT_REQUIRED_PDFS = [
+    "Chapter1.pdf",
+    "Chapter2-3.pdf",
+    "Provisioning & Assignment of Access.pdf",
+    "Review and Approval of Access.pdf",
+    "Recertification.pdf",
+]
+
 
 
 @dataclass
@@ -58,10 +68,24 @@ def _excel_rule(block: dict, *, default_ratio: float, default_abs: int, default_
 
 def load_rules(rules_path: Optional[Path]) -> Rules:
     path = Path(rules_path) if rules_path else (Path("config") / "rules.yaml")
-    data: dict = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+
+    # IMPORTANT: missing/unreadable rules file should not crash; fall back to defaults.
+    data: dict = {}
+    try:
+        if path.exists() and path.is_file():
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        else:
+            logging.warning("rules.yaml not found (%s) -> using defaults", path)
+            data = {}
+    except Exception as e:
+        logging.warning("Failed reading rules.yaml (%s): %s -> using defaults", path, e)
+        data = {}
 
     pdf = data.get("pdf_evidence", {}) or {}
     required_files = list(pdf.get("required_files", []) or [])
+    required_files = list(pdf.get("required_files", DEFAULT_REQUIRED_PDFS) or DEFAULT_REQUIRED_PDFS)
+    if not required_files:
+        required_files = list(DEFAULT_REQUIRED_PDFS)
     min_text_chars = int(pdf.get("min_text_chars", 200) or 200)
     ocr_image_threshold = int(pdf.get("ocr_image_threshold", 1) or 1)
 

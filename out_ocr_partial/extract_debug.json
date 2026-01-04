@@ -1,0 +1,73 @@
+[
+  {
+    "event": "dac_ocr_pages_source",
+    "source": "user",
+    "pages": [
+      14,
+      38,
+      43,
+      53
+    ]
+  },
+  {
+    "event": "dac_ocr_result",
+    "base_chars": 43251,
+    "ocr_text_chars": 2473,
+    "pages_used": [
+      14,
+      38,
+      43,
+      53
+    ]
+  },
+  {
+    "event": "extract_1.1_values",
+    "cms_id": "1513344",
+    "it_asset_id": "AID551",
+    "it_asset_name": "MICROSOFT OFFICE 365"
+  },
+  {
+    "event": "sec4.1_candidate_pages",
+    "pages": [
+      0,
+      2,
+      7,
+      38,
+      53,
+      54,
+      55
+    ]
+  },
+  {
+    "event": "sec4.1_extract",
+    "field": "sod",
+    "value": "no",
+    "method": "text_near"
+  },
+  {
+    "event": "sec4.1_extract",
+    "field": "fa",
+    "value": null,
+    "method": "text_near"
+  },
+  {
+    "event": "sec4.1_extract",
+    "field": "upload",
+    "value": null,
+    "method": "text_near"
+  },
+  {
+    "event": "sec4.2_candidate_pages",
+    "pages": [
+      35,
+      42,
+      43
+    ]
+  },
+  {
+    "event": "sec4.2_extract",
+    "field": "cif",
+    "value": null,
+    "method": "text_near"
+  }
+]

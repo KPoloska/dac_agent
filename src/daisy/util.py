@@ -1,194 +1,136 @@
+# src/daisy/util.py
 from __future__ import annotations
 
 import hashlib
-import math
+import json
 import re
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple
 
 
-# -----------------------------------------------------------------------------
-# Existing helpers used by agent.py
-# -----------------------------------------------------------------------------
-def find_first_value_after_labels(lines: List[str], labels: List[str]) -> Optional[str]:
+def sanitize_json(obj: Any) -> Any:
     """
-    Best-effort: find any line containing one of `labels` (case-insensitive),
-    then return the next non-empty line that doesn't look like the label itself.
+    Remove non-JSON-friendly values (NaN/inf), Path objects, etc. Best-effort.
     """
-    if not lines:
+    if obj is None:
         return None
-
-    labels_l = [l.lower() for l in labels if l]
-    for i, raw in enumerate(lines):
-        s = (raw or "").strip()
-        if not s:
-            continue
-        s_l = s.lower()
-
-        if any(lbl in s_l for lbl in labels_l):
-            # try: same line "Label: value"
-            parts = re.split(r":\s*", s, maxsplit=1)
-            if len(parts) == 2 and parts[1].strip():
-                return parts[1].strip()
-
-            # otherwise, next non-empty line
-            for j in range(i + 1, min(i + 8, len(lines))):
-                v = (lines[j] or "").strip()
-                if not v:
-                    continue
-                # skip if next line is just another label-ish thing
-                v_l = v.lower()
-                if any(lbl in v_l for lbl in labels_l):
-                    continue
-                return v
-    return None
+    if isinstance(obj, (str, int, float, bool)):
+        # JSON doesn't support NaN/inf reliably; convert to string
+        if isinstance(obj, float) and (obj != obj or obj in (float("inf"), float("-inf"))):
+            return str(obj)
+        return obj
+    if isinstance(obj, Path):
+        return str(obj)
+    if isinstance(obj, dict):
+        return {str(k): sanitize_json(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple, set)):
+        return [sanitize_json(v) for v in obj]
+    # fallback
+    try:
+        json.dumps(obj)
+        return obj
+    except Exception:
+        return str(obj)
 
 
-def extract_yes_no(text: Optional[str]) -> Optional[str]:
-    """
-    Normalize yes/no from arbitrary text.
-    Returns "yes", "no" or None.
-    """
-    if not text:
-        return None
-    t = str(text).strip().lower()
-    # common variants
-    if re.search(r"\byes\b", t):
-        return "yes"
-    if re.search(r"\bno\b", t):
-        return "no"
-    return None
-
-
-def list_existing_files(dir_path: Path) -> List[str]:
-    """
-    Return sorted list of *file names* inside dir (non-recursive).
-    """
-    p = Path(dir_path)
-    if not p.exists() or not p.is_dir():
-        return []
-    return sorted([x.name for x in p.iterdir() if x.is_file()])
-
-
-# -----------------------------------------------------------------------------
-# New: deterministic run reproducibility helpers
-# -----------------------------------------------------------------------------
-def sha256_file(path: Path) -> str:
+def sha256_file(p: Path) -> str:
     h = hashlib.sha256()
-    with open(path, "rb") as f:
+    with open(p, "rb") as f:
         for chunk in iter(lambda: f.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
 
 
-def sha256_text(text: str, encoding: str = "utf-8") -> str:
-    return hashlib.sha256(text.encode(encoding)).hexdigest()
-
-
-def evidence_file_list(evidence_dir: Path, recursive: bool = False) -> List[str]:
-    """
-    Deterministic file listing for hashing.
-    Returns *relative* paths (POSIX style), sorted.
-    """
-    base = Path(evidence_dir)
-    if not base.exists() or not base.is_dir():
+def list_existing_files(dir_path: Path) -> List[str]:
+    if not dir_path.exists():
         return []
-
-    files: List[Path] = []
-    if recursive:
-        files = [p for p in base.rglob("*") if p.is_file()]
-    else:
-        files = [p for p in base.iterdir() if p.is_file()]
-
-    rels = [p.relative_to(base).as_posix() for p in files]
-    return sorted(rels)
+    out: List[str] = []
+    for p in sorted(dir_path.iterdir()):
+        if p.is_file():
+            out.append(p.name)
+    return out
 
 
 def evidence_file_list_hash(evidence_dir: Path, recursive: bool = False) -> Tuple[List[str], str]:
     """
-    Hash of the evidence dir file list (not file contents).
+    Returns (sorted relative file list, sha256 of joined list).
     """
-    rels = evidence_file_list(evidence_dir, recursive=recursive)
-    joined = "\n".join(rels)
-    return rels, sha256_text(joined)
+    files: List[str] = []
+    if recursive:
+        for p in evidence_dir.rglob("*"):
+            if p.is_file():
+                files.append(str(p.relative_to(evidence_dir)).replace("/", "\\"))
+    else:
+        for p in evidence_dir.iterdir():
+            if p.is_file():
+                files.append(p.name)
+
+    files = sorted(files, key=lambda s: s.lower())
+    joined = "\n".join(files).encode("utf-8", errors="ignore")
+    return files, hashlib.sha256(joined).hexdigest()
 
 
-# -----------------------------------------------------------------------------
-# New: strict JSON sanitization (NaN/Infinity -> None)
-# -----------------------------------------------------------------------------
-def _is_nan_like(x: Any) -> bool:
-    # float nan/inf
-    if isinstance(x, float):
-        return not math.isfinite(x)
-
-    # numpy floats/ints if numpy exists
-    try:
-        import numpy as np  # type: ignore
-
-        if isinstance(x, (np.floating,)):
-            xv = float(x)
-            return not math.isfinite(xv)
-    except Exception:
-        pass
-
-    # pandas NA / NaT / numpy.nan etc via pandas.isna if pandas exists
-    try:
-        import pandas as pd  # type: ignore
-
-        # pd.isna(True) is False; pd.isna("x") is False; pd.isna(pd.NA) is True
-        return bool(pd.isna(x))
-    except Exception:
-        return False
-
-
-def sanitize_json(obj: Any) -> Any:
+def find_first_value_after_labels(lines: List[str], labels: List[str]) -> Optional[str]:
     """
-    Recursively convert objects into JSON-safe structures:
-    - NaN/Inf/pd.NA -> None
-    - Path -> str
-    - tuples/sets -> lists
-    - dict keys -> str if not already basic JSON key
+    Scan lines and try to find a value right after any of the given labels.
+    Very simple heuristic: if a line contains the label, return trailing text or next non-empty line.
     """
-    if obj is None:
+    if not lines:
         return None
 
-    # NaN / Inf / pd.NA
-    if _is_nan_like(obj):
+    labels_low = [l.lower() for l in labels]
+    clean = [ln.strip() for ln in lines]
+
+    for i, ln in enumerate(clean):
+        low = ln.lower()
+        for lab, lab_low in zip(labels, labels_low):
+            if lab_low in low:
+                # same line value after label
+                # e.g. "CMS Product ID 1513344" or "IT Asset ID: AID551"
+                after = re.split(re.escape(lab), ln, flags=re.IGNORECASE)
+                if len(after) >= 2:
+                    v = after[-1].strip(" :\t")
+                    if v:
+                        return v
+                # next non-empty line
+                for j in range(i + 1, min(i + 6, len(clean))):
+                    if clean[j]:
+                        return clean[j]
+    return None
+
+
+def extract_yes_no(value: Optional[str]) -> Optional[str]:
+    """
+    OCR-tolerant YES/NO extraction.
+    Accepts: yes/no, y/n, with punctuation and common OCR whitespace.
+    Returns: "yes" or "no" or None.
+    """
+    if value is None:
         return None
 
-    # primitives
-    if isinstance(obj, (str, int, bool)):
-        return obj
+    s = str(value).strip().lower()
+    if not s:
+        return None
 
-    # floats (finite)
-    if isinstance(obj, float):
-        return obj
+    # Normalize common punctuation and whitespace
+    s = s.replace("\r\n", "\n").replace("\r", "\n")
+    s = re.sub(r"[ \t]+", " ", s)
+    s = s.strip(" \t\n\r:;,.|[](){}")
 
-    # Path
-    if isinstance(obj, Path):
-        return str(obj)
+    # If the whole string is exactly y/n
+    if s in {"y", "yes"}:
+        return "yes"
+    if s in {"n", "no"}:
+        return "no"
 
-    # bytes
-    if isinstance(obj, (bytes, bytearray)):
-        try:
-            return obj.decode("utf-8", errors="replace")
-        except Exception:
-            return str(obj)
+    # If string contains standalone token yes/no/y/n
+    m = re.search(r"(?i)\b(yes|no|y|n)\b", s)
+    if not m:
+        return None
 
-    # list/tuple/set
-    if isinstance(obj, (list, tuple, set)):
-        return [sanitize_json(x) for x in obj]
-
-    # dict
-    if isinstance(obj, dict):
-        out: Dict[str, Any] = {}
-        for k, v in obj.items():
-            if isinstance(k, (str, int, float, bool)) and not _is_nan_like(k):
-                kk = str(k) if not isinstance(k, str) else k
-            else:
-                kk = str(k)
-            out[kk] = sanitize_json(v)
-        return out
-
-    # fallback: try to stringify (safe for weird objects like Timestamps)
-    return str(obj)
+    tok = m.group(1).lower()
+    if tok in {"yes", "y"}:
+        return "yes"
+    if tok in {"no", "n"}:
+        return "no"
+    return None

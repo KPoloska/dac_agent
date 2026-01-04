@@ -1,0 +1,6 @@
+2026-01-02 04:51:54,370 INFO OCR cache write: dac_partially_scanned.090bfe01.txt
+2026-01-02 04:51:55,717 INFO OCR cache write: Chapter1.a6157cb2.txt
+2026-01-02 04:51:57,174 INFO OCR cache write: Chapter2-3.a04c95b4.txt
+2026-01-02 05:18:10,374 INFO OCR cache hit: dac_partially_scanned.090bfe01.txt
+2026-01-02 05:18:11,680 INFO OCR cache write: Chapter1.cd1821ec.txt
+2026-01-02 05:18:13,090 INFO OCR cache write: Chapter2-3.0168877b.txt

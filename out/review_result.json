@@ -1,6 +1,6 @@
 {
   "dac_file": "daisy_test_data\\2025_11_11_Report_DAC_Template_Resource_MICROSOFT_OFFICE_365.pdf",
-  "generated_at": "2026-01-02T03:15:20.271872+00:00",
+  "generated_at": "2026-01-02T04:19:21.059582+00:00",
   "overall_status": "PARTIALLY_MET",
   "sections": [
     {
@@ -106,17 +106,25 @@
             "page_count": 10,
             "text_chars": 0,
             "image_count": 20,
-            "ocr_required": true,
             "ocr_enabled": true,
+            "ocr_required": true,
             "ocr_available": true,
             "ocr_attempted": true,
             "ocr_lang": "eng",
             "ocr_dpi": 200,
             "ocr_pages": 2,
-            "ocr_cache_hit": true,
             "ocr_text_chars": 1731,
+            "ocr_cache_hit": false,
             "ocr_succeeded": true,
-            "text_chars_after_ocr": 1730
+            "ocr_pages_requested": [
+              0,
+              1
+            ],
+            "ocr_pages_used": [
+              0,
+              1
+            ],
+            "text_chars_after_ocr": 1731
           }
         },
         {
@@ -130,17 +138,25 @@
             "page_count": 11,
             "text_chars": 0,
             "image_count": 22,
-            "ocr_required": true,
             "ocr_enabled": true,
+            "ocr_required": true,
             "ocr_available": true,
             "ocr_attempted": true,
             "ocr_lang": "eng",
             "ocr_dpi": 200,
             "ocr_pages": 2,
-            "ocr_cache_hit": true,
             "ocr_text_chars": 2272,
+            "ocr_cache_hit": false,
             "ocr_succeeded": true,
-            "text_chars_after_ocr": 2270
+            "ocr_pages_requested": [
+              0,
+              1
+            ],
+            "ocr_pages_used": [
+              0,
+              1
+            ],
+            "text_chars_after_ocr": 2272
           }
         },
         {
@@ -154,8 +170,8 @@
             "page_count": 3,
             "text_chars": 4460,
             "image_count": 3,
-            "ocr_required": false,
             "ocr_enabled": true,
+            "ocr_required": false,
             "ocr_available": false,
             "ocr_attempted": false
           }
@@ -171,8 +187,8 @@
             "page_count": 3,
             "text_chars": 2633,
             "image_count": 3,
-            "ocr_required": false,
             "ocr_enabled": true,
+            "ocr_required": false,
             "ocr_available": false,
             "ocr_attempted": false
           }
@@ -188,66 +204,10 @@
             "page_count": 2,
             "text_chars": 2668,
             "image_count": 2,
-            "ocr_required": false,
             "ocr_enabled": true,
+            "ocr_required": false,
             "ocr_available": false,
             "ocr_attempted": false
-          }
-        },
-        {
-          "check_id": "S2.0-CONTENT-CH1-01",
-          "name": "Chapter1.pdf: Chapter 1 contains the word 'Chapter' (sanity check)",
-          "status": "MET",
-          "severity": "major",
-          "message": "",
-          "evidence": {
-            "file": "daisy_test_data\\Chapter1.pdf",
-            "rule_id": "CH1-01",
-            "rule_type": "regex",
-            "matched": true,
-            "snippet": ". IT Asset Description 1 IT Asset Description The current chapter is aimed to provide general information regarding the IT As",
-            "page_count": 10,
-            "text_chars": 0,
-            "image_count": 20,
-            "ocr_required": true,
-            "ocr_enabled": true,
-            "ocr_available": true,
-            "ocr_attempted": true,
-            "ocr_lang": "eng",
-            "ocr_dpi": 200,
-            "ocr_pages": 2,
-            "ocr_cache_hit": true,
-            "ocr_text_chars": 1731,
-            "ocr_succeeded": true,
-            "text_chars_after_ocr": 1730
-          }
-        },
-        {
-          "check_id": "S2.0-CONTENT-CH23-01",
-          "name": "Chapter2-3.pdf: Chapter 2-3 contains the word 'Chapter' (sanity check)",
-          "status": "MET",
-          "severity": "major",
-          "message": "MVP warning: content rule not met (CH23-01).",
-          "evidence": {
-            "file": "daisy_test_data\\Chapter2-3.pdf",
-            "rule_id": "CH23-01",
-            "rule_type": "regex",
-            "matched": false,
-            "snippet": "",
-            "page_count": 11,
-            "text_chars": 0,
-            "image_count": 22,
-            "ocr_required": true,
-            "ocr_enabled": true,
-            "ocr_available": true,
-            "ocr_attempted": true,
-            "ocr_lang": "eng",
-            "ocr_dpi": 200,
-            "ocr_pages": 2,
-            "ocr_cache_hit": true,
-            "ocr_text_chars": 2272,
-            "ocr_succeeded": true,
-            "text_chars_after_ocr": 2270
           }
         }
       ]
@@ -317,13 +277,13 @@
             "samples": [
               {
                 "Display name": "BC_AGMQAPrepTool_EBMembers @ oa.pnrad.net",
-                "Description": null,
+                "Description": NaN,
                 "SoD Area": "XX - Not SoD-relevant",
                 "Tier Level": 3.0
               },
               {
                 "Display name": "MDO-RBAC-Full-Management @ oa.pnrad.net",
-                "Description": null,
+                "Description": NaN,
                 "SoD Area": "XX - Not SoD-relevant",
                 "Tier Level": 1.0
               },
@@ -331,19 +291,19 @@
                 "Display name": "O365-LG-CopilotStudio @ oa.pnrad.net",
                 "Description": "Owner: xa359_Benoit Krier, ha995_Martin Puaud",
                 "SoD Area": "XX - Not SoD-relevant",
-                "Tier Level": null
+                "Tier Level": NaN
               },
               {
                 "Display name": "O365-LG-E5-SharedMBX-ConfCall @ oa.pnrad.net",
                 "Description": "Owner: xa359_Benoit Krier, ha995_Martin Puaud",
                 "SoD Area": "XX - Not SoD-relevant",
-                "Tier Level": null
+                "Tier Level": NaN
               },
               {
                 "Display name": "O365-LG-PowerAppsUser-Atlas @ oa.pnrad.net",
                 "Description": "Owner: xa359_Benoit Krier, ud637_Johannes Hugo",
                 "SoD Area": "XX - Not SoD-relevant",
-                "Tier Level": null
+                "Tier Level": NaN
               }
             ]
           }
@@ -360,7 +320,7 @@
             "samples": [
               {
                 "Display name": "BC_AGMQAPrepTool_EBMembers @ oa.pnrad.net",
-                "Description": null
+                "Description": NaN
               },
               {
                 "Display name": "DLP-Excel-Exception-CBAus-M365",
@@ -464,10 +424,10 @@
             "samples": [
               {
                 "Display name": "SharePoint - Administrator-IT",
-                "Description": null,
+                "Description": NaN,
                 "Tier Level": 1,
-                "IT Role Owner": null,
-                "cust_owner": null,
+                "IT Role Owner": NaN,
+                "cust_owner": NaN,
                 "Application Owner": "SharePoint Admin - Role Owner | User group"
               }
             ]
@@ -485,7 +445,7 @@
             "samples": [
               {
                 "Display name": "SharePoint - Administrator-IT",
-                "Description": null
+                "Description": NaN
               }
             ]
           }
@@ -553,6 +513,14 @@
       "Provisioning & Assignment of Access.pdf",
       "Recertification.pdf",
       "Review and Approval of Access.pdf"
-    ]
+    ],
+    "dac_ocr": {
+      "ocr_enabled": true,
+      "ocr_attempted": false,
+      "ocr_succeeded": false,
+      "base_text_chars": 45161,
+      "text_chars_after_ocr": 45161,
+      "ocr_pages_requested": null
+    }
   }
 }
